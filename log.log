@@ -1,0 +1,19 @@
+2024-09-18 22:22:52,794 - __main__ - ERROR - Error. 405 Client Error: METHOD NOT ALLOWED for url: https://httpbin.org/delete
+2024-09-18 22:22:52,794 - __main__ - ERROR - Error. 405 Client Error: METHOD NOT ALLOWED for url: https://httpbin.org/delete
+2024-09-19 00:02:38,349 - helpers.logger - INFO - OK. URL: https://httpbin.org/status/200, Code: 200
+2024-09-19 00:02:38,999 - helpers.logger - INFO - OK. URL: https://httpbin.org/status/300, Code: 300
+2024-09-19 00:02:39,558 - helpers.logger - ERROR - Error. 400 Client Error: BAD REQUEST for url: https://httpbin.org/status/400
+2024-09-19 00:02:40,192 - helpers.logger - ERROR - Error. 404 Client Error: NOT FOUND for url: https://httpbin.org/status/404
+2024-09-19 00:02:41,229 - helpers.logger - ERROR - Error. 500 Server Error: INTERNAL SERVER ERROR for url: https://httpbin.org/status/500
+2024-09-19 00:07:48,382 - helpers.logger - INFO - OK. URL: https://petstore.swagger.io/v2/pet/findByStatus?status=pending, Code: 200
+2024-09-19 00:10:12,922 - helpers.logger - INFO - OK. URL: https://petstore.swagger.io/v2/store/inventory, Code: 200
+2024-09-19 00:10:20,163 - helpers.logger - INFO - OK. URL: https://petstore.swagger.io/v2/store/inventory, Code: 200
+2024-09-19 00:13:50,868 - helpers.logger - INFO - OK. URL: https://petstore.swagger.io/v2/store/order, Code: 200
+2024-09-19 00:15:35,962 - helpers.logger - INFO - OK. URL: https://httpbin.org/status/200, Code: 200
+2024-09-19 00:15:36,947 - helpers.logger - INFO - OK. URL: https://httpbin.org/status/300, Code: 300
+2024-09-19 00:15:37,579 - helpers.logger - ERROR - Error. 400 Client Error: BAD REQUEST for url: https://httpbin.org/status/400
+2024-09-19 00:15:38,667 - helpers.logger - ERROR - Error. 404 Client Error: NOT FOUND for url: https://httpbin.org/status/404
+2024-09-19 00:15:39,351 - helpers.logger - ERROR - Error. 500 Server Error: INTERNAL SERVER ERROR for url: https://httpbin.org/status/500
+2024-09-19 00:16:59,862 - helpers.logger - INFO - OK. URL: https://petstore.swagger.io/v2/pet/findByStatus?status=pending, Code: 200
+2024-09-19 00:17:00,426 - helpers.logger - INFO - OK. URL: https://petstore.swagger.io/v2/store/inventory, Code: 200
+2024-09-19 00:17:01,009 - helpers.logger - INFO - OK. URL: https://petstore.swagger.io/v2/store/order, Code: 200
