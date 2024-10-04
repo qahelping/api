@@ -1,35 +1,21 @@
-import json
-
-import pytest
-import requests
-
-from helpers.pet_service import get_pet, get_store_inventory, post_order
+from helpers.pet_service import PetService
+from models.data import Order
 
 
 def test_get_pet():
-    assert get_pet()[0]['id'] == 1010
+    assert PetService().get_pet()[0]['id'] == 1010
 
 
 def test_get_store_inventory():
-    response = get_store_inventory()
+    response = PetService().get_store_inventory()
     assert response['3000'] == 1
     assert response['5000'] == 1
     assert response['pending'] == 39
 
 
 def test_post_order():
-    body = {
-        "id": 1,
-        "petId": 1,
-        "quantity": 0,
-        "shipDate": "2024-02-17T09:42:10.119Z",
-        "status": "placed",
-        "complete": 'true'
-    }
-    response = post_order(body)
+    body = Order(id=1, petId=1, quantity=0, shipDate='2024-02-17T09:42:10.119Z', status='placed', complete=True)
 
-    assert response['id'] == body['id']
-    assert response['status'] == body['status']
+    response = PetService().post_order(body.dict())
 
-
-
+    assert response.status == body.status

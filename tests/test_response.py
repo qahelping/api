@@ -1,6 +1,8 @@
 import pytest
 import requests
 
+from data.codes import STATUS_CODE
+
 
 def test_text():
     response = requests.get('https://api.thecatapi.com/v1/images/search?limit=5')
@@ -48,17 +50,8 @@ def test_raise_for_status_500():
         assert True
 
 
-@pytest.mark.parametrize("status_code, codes", [
-    (200, requests.codes.ok),  # OK
-    (300, requests.codes.multiple_choices),  # Multiple Choices
-    (400, requests.codes.bad_request),  # Bad Request
-    (404, requests.codes.not_found),  # Not Found
-    (500, requests.codes.internal_server_error),  # Internal Server Error
-    (511, requests.codes.network_authentication),  # Network Authentication Required
-])
+@pytest.mark.parametrize("status_code, codes", STATUS_CODE)
 def test_status_codes(status_code, codes):
     response = requests.get(f'https://httpbin.org/status/{status_code}')
 
     assert response.status_code == codes, f"Expected {codes}, but got {response.status_code}"
-
-

@@ -1,17 +1,21 @@
-from helpers.base_service import get, post
+from models.data import Order
+from helpers.base_service import BaseService
 
 BASE_URL = 'https://petstore.swagger.io/v2/'
 
 
-def get_pet():
-    url = BASE_URL + 'pet/findByStatus?status=pending'
-    return get(url)
+class PetService(BaseService):
+    def get_pet(self):
+        url = BASE_URL + 'pet/findByStatus?status=pending'
+        return self.get(url)
 
 
-def get_store_inventory():
-    url = BASE_URL + 'store/inventory'
-    return get(url)
+    def get_store_inventory(self):
+        url = BASE_URL + 'store/inventory'
+        return self.get(url)
 
-def post_order(body):
-    url = BASE_URL + 'store/order'
-    return post(url, body)
+    def post_order(self, body):
+        url = BASE_URL + 'store/order'
+        response = self.post(url, body)
+        model = Order(**response)
+        return model
