@@ -1,4 +1,5 @@
 import csv
+import json
 
 
 def get_data_from_csv(file: str):
@@ -7,3 +8,15 @@ def get_data_from_csv(file: str):
         next(reader)
         for el in reader:
             yield el
+
+
+def get_data_from_json(file: str):
+    with open('../files/file.json', "r") as f:
+        users = json.load(f)
+
+    return users['users']
+
+
+
+def id_val(val):
+    return val[0]

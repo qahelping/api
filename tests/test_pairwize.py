@@ -8,6 +8,8 @@ parametrs = [
 ]
 
 
+
 @pytest.mark.parametrize(["os", "browser", "lang"], [values for values in AllPairs(parametrs)])
 def test_allpairspy(os, browser, lang):
     print(os, browser, lang)
+
