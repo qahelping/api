@@ -8,7 +8,7 @@ class PetService(BaseService):
     def get_pet(self):
         url = BASE_URL + 'pet/findByStatus?status=pending'
         response = self.get(url)
-
+        print(response)
         return Pet(**response)
 
 
@@ -19,6 +19,6 @@ class PetService(BaseService):
     def post_order(self, body):
         url = BASE_URL + 'store/order'
         response = self.post(url, body)
-        print(response)
         model = Order(**response)
+        print(model)
         return model

@@ -3,7 +3,7 @@ import requests
 
 from helpers.logger import logger
 
-class BaseService():
+class BaseService:
 
     def delete(self, url, headers):
         try:
@@ -47,4 +47,5 @@ class BaseService():
             return response.json()
         except requests.exceptions.RequestException as e:
             logger.error("Error. %s", str(e))
+            assert None, str(e)
             return None
